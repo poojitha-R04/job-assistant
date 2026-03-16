@@ -1,0 +1,6 @@
+streamlit
+PyPDF2
+sentence-transformers
+endee
+google-generativeai
+python-dotenv
