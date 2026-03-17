@@ -1,25 +1,26 @@
-# 🎯 JobSense AI - Smart Job Application Assistant
+# 🎯 HireIQ - AI Career Intelligence Platform
 
-> An intelligent AI-powered job application assistant built using **Endee Vector Database**, Google Gemini AI, and Streamlit.
+> An intelligent AI-powered career platform built using **Endee Vector Database**, Groq LLaMA AI, and Streamlit.
 
 ![Python](https://img.shields.io/badge/Python-3.8+-blue)
 ![Endee](https://img.shields.io/badge/Vector%20DB-Endee-purple)
 ![Streamlit](https://img.shields.io/badge/UI-Streamlit-red)
-![Gemini](https://img.shields.io/badge/LLM-Google%20Gemini-green)
+![Groq](https://img.shields.io/badge/LLM-Groq%20LLaMA-green)
 
 ---
 
-## 🌟 What is JobSense AI?
+## 🌟 What is HireIQ?
 
-JobSense AI helps job seekers understand how well their resume matches a job description using the power of **semantic search** and **RAG (Retrieval Augmented Generation)**.
+HireIQ is an intelligent career platform that helps job seekers get hired faster by analyzing their resume against job descriptions using the power of **semantic search** and **AI**.
 
-Simply upload your resume, paste a job description, and get:
+Upload your resume, paste a job description, and get:
 
-- ✅ **Match Score** — How well your profile fits the job
-- ✅ **Matching Skills** — What you already have
-- ❌ **Missing Skills** — What gaps you need to fill
-- 📝 **Improved Resume Summary** — AI rewrites your summary
-- 💬 **Chat Interface** — Ask anything about your application
+- 📊 **Skills Analytics** — Match score + skill gap analysis
+- 📝 **AI Resume Builder** — ATS-optimized resume tailored to the job
+- ⚡ **Strategic Action Plan** — 3 actionable steps to strengthen your application
+- 🧠 **Interview Intelligence** — 10+ tailored questions with suggested answers
+- 🚀 **30-Day Career Roadmap** — Daily tasks with mind maps for each day
+- 🤝 **AI Career Intelligence Assistant** — Chat with AI about your profile
 
 ---
 
@@ -34,8 +35,8 @@ Simply upload your resume, paste a job description, and get:
                                                     Semantic Search
                                                            │
 ┌─────────────────┐     ┌──────────────────┐     ┌────────▼────────┐
-│   Streamlit UI  │◀────│  Google Gemini   │◀────│ Relevant Chunks │
-│   (Results +    │     │  LLM Analysis    │     │   Retrieved     │
+│   Streamlit UI  │◀────│  Groq LLaMA 3.3  │◀────│ Relevant Chunks │
+│  (Results +     │     │  70B AI Analysis │     │   Retrieved     │
 │    Chat)        │     └──────────────────┘     └─────────────────┘
 └─────────────────┘
 ```
@@ -46,7 +47,7 @@ Endee is the **core** of this application:
 
 1. **Resume Storage** — Resume text is chunked and stored as vectors in `resume_index`
 2. **Job Description Storage** — JD is chunked and stored in `job_index`
-3. **Semantic Search** — When user asks a question, Endee finds the most relevant chunks
+3. **Semantic Search** — Finds most relevant chunks for context
 4. **Match Scoring** — Cosine similarity between resume and JD vectors gives the match score
 
 ---
@@ -59,7 +60,8 @@ Endee is the **core** of this application:
 | **Python**                | Core programming language                            |
 | **Streamlit**             | Web UI framework                                     |
 | **Sentence Transformers** | Free local text embeddings (all-MiniLM-L6-v2)        |
-| **Google Gemini**         | LLM for AI analysis and chat                         |
+| **Groq LLaMA 3.3 70B**    | LLM for AI analysis, resume building and chat        |
+| **Plotly**                | Skills proficiency chart visualization               |
 | **PyPDF2**                | PDF text extraction                                  |
 | **Docker**                | Running Endee locally                                |
 
@@ -71,7 +73,7 @@ Endee is the **core** of this application:
 
 - Python 3.8+
 - Docker Desktop
-- Google Gemini API Key (free at https://aistudio.google.com)
+- Groq API Key (free at https://console.groq.com)
 
 ### Step 1: Clone the Repository
 
@@ -95,7 +97,7 @@ pip install -r requirements.txt
 ### Step 4: Run the App
 
 ```bash
-streamlit run app.py
+python -m streamlit run app.py
 ```
 
 ### Step 5: Open in Browser
@@ -108,10 +110,10 @@ http://localhost:8501
 
 ## 🚀 How to Use
 
-1. Enter your **Gemini API Key** in the sidebar
+1. Enter your **Groq API Key** in the sidebar
 2. Upload your **Resume as PDF**
 3. Paste the **Job Description**
-4. Click **"Analyze My Application"**
+4. Click **"Analyze with HireIQ"**
 5. View your **Match Score + AI Insights**
 6. Use the **Chat** to ask follow-up questions
 
